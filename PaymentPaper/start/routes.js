@@ -17,3 +17,7 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+Route.get('login', ({ view }) => {
+  return view.render('formLoginRegister')
+})
