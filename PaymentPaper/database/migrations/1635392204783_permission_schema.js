@@ -7,7 +7,7 @@ class PermissionSchema extends Schema {
   up () {
     this.create('permissions', (table) => {
       table.uuid('id').primary()
-      table.uuid('token')
+      table.uuid('token') 
       table.string('slug')
       table.integer('user_id').notNullable()
       table.timestamps();
