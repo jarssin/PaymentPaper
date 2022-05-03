@@ -1,16 +1,16 @@
 'use strict'
 
-const UserService = use('App/Services/UserService')
+const User = use('App/Models/User')
 
 class UserController {
     async store({ request, response }) {
         try {
             const data = request.all()
-            const user  = await UserService.create(data);
-            return response.status(201).json({user});
+            const user = await User.create(data)
+            return response.status(201).json(user)
         }
         catch (error) {
-            return response.status(400).json({ message: error.message });
+            return response.status(400).json({ message: error.message })
         }
     }
 
